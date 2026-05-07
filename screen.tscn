@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://du1oo8hl72mf2"]
 
 [ext_resource type="Script" uid="uid://jqcdtfh8kqyn" path="res://tracking_screen.gd" id="1_vouji"]
+[ext_resource type="Texture2D" uid="uid://dm86ptw5en4a3" path="res://trackerlogo.svg" id="2_7cosj"]
 
 [node name="Screen" type="Control" unique_id=902064758]
 layout_mode = 3
@@ -42,3 +43,7 @@ offset_right = 137.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Min"
+
+[node name="Trackerlogo" type="Sprite2D" parent="." unique_id=596461879]
+position = Vector2(-216, 171)
+texture = ExtResource("2_7cosj")
