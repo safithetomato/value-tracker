@@ -20,7 +20,7 @@ var max_value: float = 0.0
 var min_value: float = 0.0
 
 var line: Line2D = null
-var new_line: Line2D = Line2D.new()
+var new_line: Line2D
 
 func _ready() -> void:
 	down_left_corner = color_rect.get_begin()
@@ -30,13 +30,18 @@ func _ready() -> void:
 		min_value = CustomMin
 		max_label.text = str(int(max_value))
 		min_label.text = str(int(min_value))
-	
+	new_line = Line2D.new()
 	new_line.width = 5
-	var smooth_value = 50.0
-	for i in range(500):
-		smooth_value = lerp(smooth_value,randf_range(smooth_value - 100,smooth_value + 100),0.1)
-		add_value(smooth_value)
-		await get_tree().create_timer(0.1).timeout
+	
+	
+	##testing
+	#var smooth_value = 50.0
+	#for i in range(500):
+		#smooth_value = lerp(smooth_value,randf_range(smooth_value - 100,smooth_value + 100),0.1)
+		#add_value(smooth_value)
+		#await get_tree().create_timer(0.1).timeout
+		#if i%12 == 1:
+			#reset_tracker()
 
 func add_value(value: float):
 	values_array.append(value)
@@ -55,23 +60,27 @@ func add_value(value: float):
 			
 			max_label.text = str(int(max_value))
 			min_label.text = str(int(min_value))
-
-	update_line()
+	_update_line()
 
 func reset_tracker():
 	values_array.clear()
 	for child in get_children():
 		if child is Line2D:
 			child.queue_free()
+	max_value = 0.0
+	min_value = 0.0
+	max_label.text = "Max"
+	min_label.text = "Min"
 
-func update_line():
+func _update_line():
 	
 	var new_points: PackedVector2Array
 	
 	if line == null:
-		var newest_line = new_line
-		add_child(newest_line)
-		line = newest_line
+		new_line = Line2D.new()
+		new_line.width = 5
+		add_child(new_line)
+		line = new_line
 		
 	line.clear_points()
 	
