@@ -6,10 +6,8 @@
 layout_mode = 3
 anchor_right = 0.26000002
 anchor_bottom = 0.30900002
-offset_left = 422.0
-offset_top = 197.0
-offset_right = 422.47998
-offset_bottom = 196.76799
+offset_right = 0.47998047
+offset_bottom = -0.23200989
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vouji")
