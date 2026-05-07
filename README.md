@@ -4,7 +4,7 @@ Easily track any float value you wish to track
 
 use ```add_value(value: float)``` everytime you want to add a point into the graph tracking the value
 ## note:
-to always track a value use ```set()```
+to always track a value use ```set```
 ## for example:
 ```
 @onready var Tracker: ValueTracker = $ValueTracker
