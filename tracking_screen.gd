@@ -34,12 +34,12 @@ func _ready() -> void:
 	new_line.width = 5
 	
 	
-	#testing
-	var smooth_value = 0.0
-	for i in range(500):
-		smooth_value = lerp(smooth_value,randf_range(smooth_value,smooth_value + 20),0.1)
-		add_value(smooth_value)
-		await get_tree().create_timer(0.1).timeout
+	##testing
+	#var smooth_value = 0.0
+	#for i in range(500):
+		#smooth_value = lerp(smooth_value,randf_range(smooth_value,smooth_value + 20),0.1)
+		#add_value(smooth_value)
+		#await get_tree().create_timer(0.1).timeout
 		#if i%12 == 1:
 			#reset_tracker()
 
